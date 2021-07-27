@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/07/26 16:17:00 by asebrech         ###   ########.fr        #
+#    Updated: 2021/07/27 11:10:03 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC =	srcs/so_long.c\
 		srcs/parsing.c\
 		srcs/utiles.c\
 		srcs/print_map.c\
+		srcs/move.c\
 		srcs/get_next_line.c
 SRCB =
 RM = rm -rf

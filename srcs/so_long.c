@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:46:21 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/26 17:52:50 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/27 14:15:18 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ int	key_hook(int keycode, t_var *var)
 		mlx_destroy_window(var->mlx, var->win);
 		exit(0);
 	}
+	else
+		move(var, keycode);
 	return (0);
 }
 
-int	ft_close(int keycode, t_var *var)
+static int	ft_close(int keycode, t_var *var)
 {
 	keycode = 0;
 	var = NULL;
