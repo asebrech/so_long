@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:46:21 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/27 14:15:18 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/28 14:01:12 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	main(void)
 	t_var	var;
 
 	var = init_var();
-	var.x = 500;
-	var.y = 500;
+	var.x = 250;
+	var.y = 250;
 	ft_parsing(&var);
 	var.mlx = mlx_init();
 	var.win = mlx_new_window(var.mlx, var.x, var.y, "so_long");

@@ -6,13 +6,13 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:01:11 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/28 10:10:12 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/28 14:13:45 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static t_map	found_P(t_var *var)
+t_map	found_P(t_var *var)
 {
 	t_map	map;
 
@@ -94,7 +94,7 @@ void	move(t_var *var, int keycode)
 		if (var->map[map.i - 1][map.j] == 'E' && var->b == 0)
 			key_hook(53, var);
 		if (var->map[map.i - 1][map.j] != '1' &&
-			var->map[map.i - 1][map.i] != 'E')
+			var->map[map.i - 1][map.j] != 'E')
 		{
 			ft_memset(var->map[map.i] + map.j, '0', 1);
 			ft_memset(var->map[map.i - 1] + map.j, 'P', 1);

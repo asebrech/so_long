@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 14:51:08 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/27 16:41:38 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/28 10:37:18 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_map
 
 int		key_hook(int keycode, t_var *var);
 t_var	init_var(void);
+t_map	found_P(t_var *var);
 void	move(t_var *var, int keycode);
 void	ft_parsing(t_var *var);
 void	ft_exit(char *str);
