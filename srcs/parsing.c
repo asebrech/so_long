@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 15:32:06 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/26 17:53:04 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/28 16:28:51 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,16 @@ static void	get_map(t_var *var)
 		free(line);
 		line = NULL;
 	}
-	var->map = malloc(sizeof(char *) * var->line);
+	free(line);
+	var->map = malloc(sizeof(char *) * var->line + 1);
 	if (!var->map)
 		ft_exit("Memory Allocation Error\n");
 	fd = open("./srcs/map.ber", O_RDONLY);
-	while (get_next_line(fd, &line))
+	var->map[i] = NULL;
+	while (get_next_line(fd, &var->map[i]))
 	{
-		var->map[i] = ft_strdup(line);
-		free (line);
-		line = NULL;
 		i++;
+		var->map[i] = NULL;
 	}
 }
 
