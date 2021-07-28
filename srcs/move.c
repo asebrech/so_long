@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:01:11 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/27 17:08:07 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/28 10:10:12 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static t_map	found_P(t_var *var)
 		map.j = 0;
 		while (var->map[map.i][map.j])
 		{
-			if(var->map[map.i][map.j] == 'P')
-				return(map);
+			if (var->map[map.i][map.j] == 'P')
+				return (map);
 			map.j++;
 		}
-		map.i++;	
+		map.i++;
 	}
 	return (map);
 }
@@ -36,7 +36,7 @@ static void	move_left(t_var *var, t_map *map)
 	if (var->map[map->i][map->j - 1] == 'C')
 		var->b -= 1;
 	if (var->map[map->i][map->j - 1] == 'E' && var->b == 0)
-			key_hook(53, var);
+		key_hook(53, var);
 	if (var->map[map->i][map->j - 1] != '1' &&
 			var->map[map->i][map->j - 1] != 'E')
 	{
@@ -53,9 +53,9 @@ static void	move_right(t_var *var, t_map *map)
 	if (var->map[map->i][map->j + 1] == 'C')
 		var->b -= 1;
 	if (var->map[map->i][map->j + 1] == 'E' && var->b == 0)
-			key_hook(53, var);
+		key_hook(53, var);
 	if (var->map[map->i][map->j + 1] != '1' &&
-			var->map[map->i][map->j + 1] != 'E')
+		var->map[map->i][map->j + 1] != 'E')
 	{
 		ft_memset(var->map[map->i] + map->j, '0', 1);
 		ft_memset(var->map[map->i] + map->j + 1, 'P', 1);
@@ -65,14 +65,14 @@ static void	move_right(t_var *var, t_map *map)
 	}
 }
 
-static void move_down(t_var *var, t_map *map)
+static void	move_down(t_var *var, t_map *map)
 {
 	if (var->map[map->i + 1][map->j] == 'C')
 		var->b -= 1;
 	if (var->map[map->i + 1][map->j] == 'E' && var->b == 0)
-			key_hook(53, var);
+		key_hook(53, var);
 	if (var->map[map->i + 1][map->j] != '1' &&
-			var->map[map->i + 1][map->j] != 'E')
+		var->map[map->i + 1][map->j] != 'E')
 	{
 		ft_memset(var->map[map->i] + map->j, '0', 1);
 		ft_memset(var->map[map->i + 1] + map->j, 'P', 1);
@@ -84,7 +84,7 @@ static void move_down(t_var *var, t_map *map)
 
 void	move(t_var *var, int keycode)
 {
-	t_map 		map;
+	t_map	map;
 
 	map = found_P(var);
 	if (keycode == 126)
@@ -94,7 +94,7 @@ void	move(t_var *var, int keycode)
 		if (var->map[map.i - 1][map.j] == 'E' && var->b == 0)
 			key_hook(53, var);
 		if (var->map[map.i - 1][map.j] != '1' &&
-				var->map[map.i - 1][map.i] != 'E')
+			var->map[map.i - 1][map.i] != 'E')
 		{
 			ft_memset(var->map[map.i] + map.j, '0', 1);
 			ft_memset(var->map[map.i - 1] + map.j, 'P', 1);
