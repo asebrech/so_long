@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 15:32:06 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 15:56:32 by asebrech         ###   ########.fr       */
+/*   Created: 2021/07/29 11:30:49 by asebrech          #+#    #+#             */
+/*   Updated: 2021/07/29 16:06:39 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static void	check_char(t_var *var, char c)
 {
-	if (c != '0' && c != '1' && c != 'C' && c != 'E' && c != 'P')
+	if (c != '0' && c != '1' && c != 'C' && c != 'E' && c != 'P' && c != 'S')
 		ft_exit("Forbidden character in the map\n");
 	if (c == 'E')
 		var->nbE += 1;

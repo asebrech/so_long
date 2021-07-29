@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 11:46:21 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 16:48:07 by asebrech         ###   ########.fr       */
+/*   Created: 2021/07/29 11:31:09 by asebrech          #+#    #+#             */
+/*   Updated: 2021/07/29 16:55:52 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static void	open_img(t_var *var)
 {
@@ -19,6 +19,7 @@ static void	open_img(t_var *var)
 	var->C = mlx_xpm_file_to_image(var->mlx, "./img/C.xpm", &var->w, &var->h);
 	var->E = mlx_xpm_file_to_image(var->mlx, "./img/E.xpm", &var->w, &var->h);
 	var->P = mlx_xpm_file_to_image(var->mlx, "./img/P.xpm", &var->w, &var->h);
+	var->S = mlx_xpm_file_to_image(var->mlx, "./img/S.xpm", &var->w, &var->h);
 }
 
 static int	ft_close(int keycode, t_var *var)
@@ -26,6 +27,12 @@ static int	ft_close(int keycode, t_var *var)
 	keycode = 0;
 	var = NULL;
 	exit(0);
+	return (0);
+}
+
+static int	render_next_frame(t_var *var)
+{
+	animation_P(var);
 	return (0);
 }
 
@@ -60,6 +67,7 @@ int	main(int argc, char **argv)
 		print_map(&var);
 		mlx_hook(var.win, 2, 1L << 0, key_hook, &var);
 		mlx_hook(var.win, 17, 1L << 15, ft_close, &var);
+		mlx_loop_hook(var.mlx, render_next_frame, &var);
 		mlx_loop(var.mlx);
 	}
 	else

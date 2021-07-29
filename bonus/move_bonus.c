@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   move_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/27 10:01:11 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 16:47:20 by asebrech         ###   ########.fr       */
+/*   Created: 2021/07/29 11:30:36 by asebrech          #+#    #+#             */
+/*   Updated: 2021/07/29 16:53:54 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static void	move_left(t_var *var, t_map *map)
 {
@@ -85,6 +85,7 @@ void	move(t_var *var, int keycode)
 	t_map	map;
 
 	map = found_P(var);
+	animation_mvP(var);
 	if (keycode == 126 || keycode == 13)
 		move_up(var, &map);
 	if (keycode == 125 || keycode == 1)
