@@ -6,17 +6,17 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 14:51:08 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/28 16:37:14 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/29 10:40:25 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# define BUFFER_SIZE 500
 # include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
-# include "get_next_line.h"
 
 typedef struct s_var
 {
@@ -27,9 +27,9 @@ typedef struct s_var
 	int		line;
 	int		len;
 	char	**map;
-	int		a;
-	int		b;
-	int		c;
+	int		nbE;
+	int		nbC;
+	int		nbP;
 	int		w;
 	int		h;
 	void	*W;
@@ -37,7 +37,7 @@ typedef struct s_var
 	void	*C;
 	void	*E;
 	void	*P;
-	int		m;
+	int		mv;
 }				t_var;
 
 typedef struct s_map
@@ -46,6 +46,7 @@ typedef struct s_map
 	int	j;
 }				t_map;
 
+int		get_next_line(int fd, char **line);
 int		key_hook(int keycode, t_var *var);
 t_var	init_var(void);
 t_map	found_P(t_var *var);

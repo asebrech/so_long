@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 11:46:21 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/28 16:39:08 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/29 10:09:46 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,6 @@ static void	open_img(t_var *var)
 	var->C = mlx_xpm_file_to_image(var->mlx, "./img/C.xpm", &var->w, &var->h);
 	var->E = mlx_xpm_file_to_image(var->mlx, "./img/E.xpm", &var->w, &var->h);
 	var->P = mlx_xpm_file_to_image(var->mlx, "./img/P.xpm", &var->w, &var->h);
-}
-
-int	key_hook(int keycode, t_var *var)
-{
-	if (keycode == 53)
-	{
-		mlx_destroy_window(var->mlx, var->win);
-		exit(0);
-	}
-	else
-		move(var, keycode);
-	return (0);
 }
 
 static int	ft_close(int keycode, t_var *var)

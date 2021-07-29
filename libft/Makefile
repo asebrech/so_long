@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/06 11:17:55 by asebrech          #+#    #+#              #
-#    Updated: 2021/04/07 14:01:26 by asebrech         ###   ########.fr        #
+#    Updated: 2021/07/29 09:47:17 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,18 +24,18 @@ RM = rm -rf
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 bonus : $(OBJ) $(LST)
-	ar rc $(NAME) $(OBJ) $(LST)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ) $(LST)
+	@ranlib $(NAME)
 
 .c.o : 
 	$(CC) $(CFLAGS) $(HFLAGS) -c $< -o $(<:.c=.o)
 
 clean :
-	$(RM) $(OBJ) $(LST)
+	$(RM) *.o
 
 fclean : clean
 	$(RM) $(NAME)

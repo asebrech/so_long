@@ -6,11 +6,11 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 15:48:24 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/26 11:55:57 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/29 10:17:54 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "so_long.h"
 
 int	ft_isend(char *s, char c)
 {

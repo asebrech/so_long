@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 15:32:06 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/28 16:28:51 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/07/29 10:42:35 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static void	check_char(t_var *var, char c)
 	if (c != '0' && c != '1' && c != 'C' && c != 'E' && c != 'P')
 		ft_exit("Forbidden character in the map\n");
 	if (c == 'E')
-		var->a += 1;
+		var->nbE += 1;
 	if (c == 'C')
-		var->b += 1;
+		var->nbC += 1;
 	if (c == 'P')
-		var->c += 1;
+		var->nbP += 1;
 }
 
 static void	parsing_map(t_var *var)
@@ -87,6 +87,6 @@ void	ft_parsing(t_var *var)
 	i = 0;
 	get_map(var);
 	parsing_map(var);
-	if (var->a <= 0 || var->b <= 0 || var->c != 1)
+	if (var->nbE <= 0 || var->nbC <= 0 || var->nbP != 1)
 		ft_exit("The map must have at least one 'E' one 'C' and ONE 'P'\n");
 }

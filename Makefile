@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/07/27 11:10:03 by asebrech         ###   ########.fr        #
+#    Updated: 2021/07/29 09:47:13 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LFLAGS = -lmlx -framework OpenGL -framework AppKit
 HEADER = includes
-DLIB = libft
-PLIB = libft/libft.a
-NAME = libso_long.a
-EXEC = so_long
+NAME = so_long
+RM = rm -rf
 SRC =	srcs/so_long.c\
 		srcs/parsing.c\
 		srcs/utiles.c\
@@ -25,7 +23,6 @@ SRC =	srcs/so_long.c\
 		srcs/move.c\
 		srcs/get_next_line.c
 SRCB =
-RM = rm -rf
 
 ifdef WHITH_BONUS
 	OBJ = $(SRCB:.c=.o)
@@ -42,20 +39,16 @@ bonus :
 	@make WHITH_BONUS=1 all
 
 $(NAME) : $(OBJ)
-	make -C $(DLIB) bonus
-	cp $(PLIB) $(NAME)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
-	$(CC) $(CFLAGS) -I$(HEADER) -L. -lso_long -o $(EXEC) $(LFLAGS) 
-	$(RM) $(NAME)
+	@make -C libft bonus
+	$(CC) $(CFLAGS) $(LFLAGS) -I$(HEADER) -Llibft -lft $(OBJ) -o $(NAME)
 
 clean :
-	make -C $(DLIB) clean
+	@make -C libft clean
 	$(RM) */*.o
 
 fclean : clean
-	$(RM) $(PLIB)
-	$(RM) $(EXEC)
+	$(RM) libft/libft.a
+	$(RM) $(NAME)
 
 
 re : fclean all
