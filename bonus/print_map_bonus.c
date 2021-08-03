@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:30:21 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/03 15:00:15 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/03 15:41:49 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,11 +114,15 @@ static void	print_left_up(t_var *var)
 
 void	print_map(t_var *var)
 {
+	char	*c;
+
+	c = ft_itoa(var->mv);
 	mlx_clear_window(var->mlx, var->win);
 	print_right_down(var);
 	print_right_up(var);
 	print_left_down(var);
 	print_left_up(var);
 	mlx_string_put(var->mlx, var->win, var->x / 2, 0,
-		0X00FF0000, (char *)ft_itoa(var->mv));
+		0X00FF0000, c);
+	free(c);
 }
