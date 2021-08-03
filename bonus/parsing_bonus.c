@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:30:49 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 16:06:39 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/03 11:22:08 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	check_char(t_var *var, char c)
 		var->nbC += 1;
 	if (c == 'P')
 		var->nbP += 1;
+	if (c == 'S')
+		var->nbS += 1;
 }
 
 static void	parsing_map(t_var *var)

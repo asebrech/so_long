@@ -6,38 +6,11 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:30:21 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 11:30:24 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/03 15:00:15 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-static void	print_img(t_var *var, int i, int j, t_map *map)
-{
-	if (var->map[map->i][map->j] == '1')
-		mlx_put_image_to_window(var->mlx, var->win,
-			var->W, 16 * j + var->x / 2, 16 * i + var->y / 2);
-	if (var->map[map->i][map->j] == '0')
-		mlx_put_image_to_window(var->mlx, var->win,
-			var->F, 16 * j + var->x / 2, 16 * i + var->y / 2);
-	if (var->map[map->i][map->j] == 'C')
-	{
-		mlx_put_image_to_window(var->mlx, var->win,
-			var->F, 16 * j + var->x / 2, 16 * i + var->y / 2);
-		mlx_put_image_to_window(var->mlx, var->win,
-			var->C, 16 * j + var->x / 2, 16 * i + var->y / 2);
-	}
-	if (var->map[map->i][map->j] == 'E')
-		mlx_put_image_to_window(var->mlx, var->win, var->E,
-			16 * j + var->x / 2, 16 * i + var->y / 2);
-	if (var->map[map->i][map->j] == 'P')
-	{
-		mlx_put_image_to_window(var->mlx, var->win, var->F,
-			16 * j + var->x / 2, 16 * i + var->y / 2);
-		mlx_put_image_to_window(var->mlx, var->win, var->P,
-			16 * j + var->x / 2, 16 * i + var->y / 2);
-	}
-}
 
 static void	print_right_up(t_var *var)
 {
@@ -114,14 +87,13 @@ static void	print_right_down(t_var *var)
 	}
 }
 
-void	print_map(t_var *var)
+static void	print_left_up(t_var *var)
 {
 	int		i;
 	int		j;
 	int		k;
 	t_map	map;
 
-	mlx_clear_window(var->mlx, var->win);
 	map = found_P(var);
 	k = map.j;
 	i = 0;
@@ -138,7 +110,15 @@ void	print_map(t_var *var)
 		map.i--;
 		i--;
 	}
+}
+
+void	print_map(t_var *var)
+{
+	mlx_clear_window(var->mlx, var->win);
 	print_right_down(var);
 	print_right_up(var);
 	print_left_down(var);
+	print_left_up(var);
+	mlx_string_put(var->mlx, var->win, var->x / 2, 0,
+		0X00FF0000, (char *)ft_itoa(var->mv));
 }

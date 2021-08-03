@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:52 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 16:01:51 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/03 12:49:45 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_var
 	int		nbE;
 	int		nbC;
 	int		nbP;
+	int		nbS;
 	int		w;
 	int		h;
 	void	*W;
@@ -63,11 +64,20 @@ int		get_next_line(int fd, char **line);
 int		key_hook(int keycode, t_var *var);
 t_var	init_var(void);
 t_map	found_P(t_var *var);
+t_map	found_S(t_var *var);
 void	move(t_var *var, int keycode);
 void	ft_parsing(t_var *var);
 void	ft_exit(char *str);
 void	print_map(t_var *var);
 void	animation_P(t_var *var);
+void	animation_S(t_var *var);
 void	animation_mvP(t_var *var);
+void	animation_mvS(t_var *var);
+void	print_img(t_var *var, int i, int j, t_map *map);
+void	move_S(t_var *var);
+void	move_left_S(t_var *var, t_map *map);
+void	move_right_S(t_var *var, t_map *map);
+void	move_up_S(t_var *var, t_map *map);
+void	move_down_S(t_var *var, t_map *map);
 
 #endif

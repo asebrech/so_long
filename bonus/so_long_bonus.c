@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:09 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 16:55:52 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/03 12:36:16 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ static int	ft_close(int keycode, t_var *var)
 static int	render_next_frame(t_var *var)
 {
 	animation_P(var);
+	animation_S(var);
+	move_S(var);
+	print_map(var);
 	return (0);
 }
 

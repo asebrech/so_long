@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:22 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 16:49:25 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/03 14:39:16 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ t_var	init_var(void)
 	var.nbE = 0;
 	var.nbC = 0;
 	var.nbP = 0;
+	var.nbS = 0;
 	var.w = 0;
 	var.h = 0;
 	var.W = NULL;
