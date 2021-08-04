@@ -6,11 +6,33 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 15:48:24 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 10:17:54 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/04/12 11:48:08 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "get_next_line.h"
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void			*pt;
+	size_t			i;
+	unsigned char	*str;
+	size_t			n;
+
+	n = count * size;
+	i = 0;
+	pt = malloc(count * size);
+	if (pt == NULL)
+		return (NULL);
+	str = (unsigned char *)pt;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = 0;
+		i++;
+	}
+	return (pt);
+}
 
 int	ft_isend(char *s, char c)
 {
@@ -31,7 +53,7 @@ ssize_t	ft_save_gest(char **save, ssize_t ret, char *buf, int fd)
 {
 	if (save[fd] != NULL)
 	{
-		ft_strlcpy(buf, save[fd], ft_strlen(buf));
+		ft_strcpy(buf, save[fd]);
 		free(save[fd]);
 		save[fd] = NULL;
 	}

@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 11:14:55 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/03 15:01:31 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/04 13:53:41 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	move_S(t_var *var)
 
 	if (k == 20)
 	{
-		animation_mvS(var);
 		if (i < 50)
 			read_map(var, 1);
 		else

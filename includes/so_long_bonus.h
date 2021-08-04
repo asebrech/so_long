@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:52 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/03 12:49:45 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/04 12:38:50 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
+# include "get_next_line.h"
 
 typedef struct s_img
 {

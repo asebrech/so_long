@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/08/03 12:36:10 by asebrech         ###   ########.fr        #
+#    Updated: 2021/08/04 12:39:20 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRC =	srcs/so_long.c\
 		srcs/utiles.c\
 		srcs/print_map.c\
 		srcs/move.c\
-		srcs/get_next_line.c
+		get_next_line/get_next_line.c\
+		get_next_line/get_next_line_utils.c
 SRCB =	bonus/so_long_bonus.c\
 		bonus/parsing_bonus.c\
 		bonus/utiles_bonus.c\
@@ -31,7 +32,8 @@ SRCB =	bonus/so_long_bonus.c\
 		bonus/move_S1_bonus.c\
 		bonus/move_bonus.c\
 		bonus/animation_bonus.c\
-		srcs/get_next_line.c
+		get_next_line/get_next_line.c\
+		get_next_line/get_next_line_utils.c
 
 ifdef WHITH_BONUS
 	OBJ = $(SRCB:.c=.o)

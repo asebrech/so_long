@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:09 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/03 12:36:16 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/04 14:02:22 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		var = init_var();
-		var.x = 250;
-		var.y = 250;
+		var.x = 1000;
+		var.y = 1000;
 		check_arg(argv[1], &var);
 		ft_parsing(&var);
 		var.mlx = mlx_init();

@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 14:51:08 by asebrech          #+#    #+#             */
-/*   Updated: 2021/07/29 15:54:52 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/04 12:03:22 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include "get_next_line.h"
 # include "../libft/libft.h"
 
 typedef struct s_var
@@ -47,7 +48,6 @@ typedef struct s_map
 	int	j;
 }				t_map;
 
-int		get_next_line(int fd, char **line);
 int		key_hook(int keycode, t_var *var);
 t_var	init_var(void);
 t_map	found_P(t_var *var);
