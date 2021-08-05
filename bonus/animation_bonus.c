@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 12:54:11 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/03 11:10:47 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:40:46 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	animation_mvP(t_var *var)
 	i++;
 }
 
-void	animation_mvS(t_var *var)
+/*void	animation_mvS(t_var *var)
 {
 	static int	i = 0;
 
@@ -120,4 +120,4 @@ void	animation_mvS(t_var *var)
 		i = -1;
 	}
 	i++;
-}
+}*/
