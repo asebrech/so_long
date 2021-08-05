@@ -6,13 +6,12 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:52 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/05 17:42:33 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/05 18:26:33 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
-# define BUFFER_SIZE 500
 # include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
