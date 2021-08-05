@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:52 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/04 12:38:50 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/05 17:42:33 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,35 @@
 # include "../libft/libft.h"
 # include "get_next_line.h"
 
-typedef struct s_img
+typedef struct s_P
 {
-	void	*mvP0;
-	void	*mvP1;
-	void	*mvP2;
-	void	*mvP3;
-	void	*mvP4;
-	void	*mvP5;
-}				t_img;
+	void	*P;
+	void	*P1;
+	void	*P2;
+	void	*P3;
+	void	*P4;
+	void	*P5;
+}				t_P;
+
+typedef struct s_S
+{
+	void	*S;
+	void	*S1;
+	void	*S2;
+	void	*S3;
+	void	*S4;
+	void	*S5;
+}				t_S;
+
+typedef struct s_mvP
+{
+	void	*P0;
+	void	*P1;
+	void	*P2;
+	void	*P3;
+	void	*P4;
+	void	*P5;
+}				t_mvP;
 
 typedef struct s_var
 {
@@ -52,7 +72,9 @@ typedef struct s_var
 	void	*S;
 	int		mv;
 	char	*ber;
-	t_img	img;
+	t_P		aP;
+	t_S		aS;
+	t_mvP	mvP;
 }				t_var;
 
 typedef struct s_map
@@ -73,12 +95,14 @@ void	print_map(t_var *var);
 void	animation_P(t_var *var);
 void	animation_S(t_var *var);
 void	animation_mvP(t_var *var);
-void	animation_mvS(t_var *var);
 void	print_img(t_var *var, int i, int j, t_map *map);
 void	move_S(t_var *var);
 void	move_left_S(t_var *var, t_map *map);
 void	move_right_S(t_var *var, t_map *map);
 void	move_up_S(t_var *var, t_map *map);
 void	move_down_S(t_var *var, t_map *map);
+void	init_P(t_var *var);
+void	init_mvP(t_var *var);
+void	init_S(t_var *var);
 
 #endif

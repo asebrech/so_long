@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:31:09 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/04 14:02:22 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/05 18:12:00 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ static void	open_img(t_var *var)
 	var->E = mlx_xpm_file_to_image(var->mlx, "./img/E.xpm", &var->w, &var->h);
 	var->P = mlx_xpm_file_to_image(var->mlx, "./img/P.xpm", &var->w, &var->h);
 	var->S = mlx_xpm_file_to_image(var->mlx, "./img/S.xpm", &var->w, &var->h);
+	init_P(var);
+	init_mvP(var);
+	init_S(var);
 }
 
 static int	ft_close(int keycode, t_var *var)
@@ -60,8 +63,8 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		var = init_var();
-		var.x = 1000;
-		var.y = 1000;
+		var.x = 900;
+		var.y = 600;
 		check_arg(argv[1], &var);
 		ft_parsing(&var);
 		var.mlx = mlx_init();

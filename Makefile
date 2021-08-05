@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/08/05 16:09:48 by asebrech         ###   ########.fr        #
+#    Updated: 2021/08/05 16:40:24 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCB =	bonus/so_long_bonus.c\
 		bonus/move_S1_bonus.c\
 		bonus/move_bonus.c\
 		bonus/animation_bonus.c\
+		bonus/animation1_bonus.c\
 		get_next_line/get_next_line.c\
 		get_next_line/get_next_line_utils.c
 

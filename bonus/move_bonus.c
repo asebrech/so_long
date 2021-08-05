@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:30:36 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/03 14:54:59 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/05 17:58:58 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,17 @@
 static void	move_left(t_var *var, t_map *map)
 {
 	if (var->map[map->i][map->j - 1] == 'S')
+	{
+		printf("You lose !..\n");
 		key_hook(53, var);
+	}
 	if (var->map[map->i][map->j - 1] == 'C')
 		var->nbC -= 1;
 	if (var->map[map->i][map->j - 1] == 'E' && var->nbC == 0)
+	{
+		printf("You win with %d moves !\n", var->mv);
 		key_hook(53, var);
+	}
 	if (var->map[map->i][map->j - 1] != '1' &&
 			var->map[map->i][map->j - 1] != 'E')
 	{
@@ -33,11 +39,17 @@ static void	move_left(t_var *var, t_map *map)
 static void	move_right(t_var *var, t_map *map)
 {
 	if (var->map[map->i][map->j + 1] == 'S')
+	{
+		printf("You lose !..\n");
 		key_hook(53, var);
+	}
 	if (var->map[map->i][map->j + 1] == 'C')
 		var->nbC -= 1;
 	if (var->map[map->i][map->j + 1] == 'E' && var->nbC == 0)
+	{
+		printf("You win with %d moves !\n", var->mv);
 		key_hook(53, var);
+	}
 	if (var->map[map->i][map->j + 1] != '1' &&
 		var->map[map->i][map->j + 1] != 'E')
 	{
@@ -51,11 +63,17 @@ static void	move_right(t_var *var, t_map *map)
 static void	move_down(t_var *var, t_map *map)
 {
 	if (var->map[map->i + 1][map->j] == 'S')
+	{
+		printf("You lose !..\n");
 		key_hook(53, var);
+	}
 	if (var->map[map->i + 1][map->j] == 'C')
 		var->nbC -= 1;
 	if (var->map[map->i + 1][map->j] == 'E' && var->nbC == 0)
+	{
+		printf("You win with %d moves !\n", var->mv);
 		key_hook(53, var);
+	}
 	if (var->map[map->i + 1][map->j] != '1' &&
 		var->map[map->i + 1][map->j] != 'E')
 	{
@@ -69,11 +87,17 @@ static void	move_down(t_var *var, t_map *map)
 static void	move_up(t_var *var, t_map *map)
 {
 	if (var->map[map->i - 1][map->j] == 'S')
+	{
+		printf("You lose !..\n");
 		key_hook(53, var);
+	}
 	if (var->map[map->i - 1][map->j] == 'C')
 		var->nbC -= 1;
 	if (var->map[map->i - 1][map->j] == 'E' && var->nbC == 0)
+	{
+		printf("You win with %d moves !\n", var->mv);
 		key_hook(53, var);
+	}
 	if (var->map[map->i - 1][map->j] != '1' &&
 		var->map[map->i - 1][map->j] != 'E')
 	{
