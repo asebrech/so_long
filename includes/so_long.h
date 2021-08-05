@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 14:51:08 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/04 12:03:22 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:09:29 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	move(t_var *var, int keycode);
 void	ft_parsing(t_var *var);
 void	ft_exit(char *str);
 void	print_map(t_var *var);
+void	print_img(t_var *var, int i, int j, t_map *map);
 
 #endif

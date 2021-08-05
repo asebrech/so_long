@@ -6,21 +6,11 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:30:21 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/05 16:11:44 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:08:33 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-static void	print_img_2(t_var *var, int i, int j)
-{
-	{
-		mlx_put_image_to_window(var->mlx, var->win, var->F,
-			32 * j + var->x / 2, 32 * i + var->y / 2);
-		mlx_put_image_to_window(var->mlx, var->win, var->S,
-			32 * j + var->x / 2, 32 * i + var->y / 2);
-	}
-}
 
 static void	print_img_1(t_var *var, int i, int j)
 {
@@ -53,7 +43,5 @@ void	print_img(t_var *var, int i, int j, t_map *map)
 				32 * j + var->x / 2, 32 * i + var->y / 2);
 		if (var->map[map->i][map->j] == 'P')
 			print_img_1(var, i, j);
-		if (var->map[map->i][map->j] == 'S')
-			print_img_2(var, i, j);
 	}
 }
