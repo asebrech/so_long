@@ -6,13 +6,13 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 14:51:08 by asebrech          #+#    #+#             */
-/*   Updated: 2021/08/05 18:25:47 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/10/12 15:26:06 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-# include <mlx.h>
+# include "../minilibx/mlx.h"
 # include <stdio.h>
 # include <fcntl.h>
 # include "get_next_line.h"
